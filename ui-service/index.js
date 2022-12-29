@@ -28,5 +28,5 @@ app.use('/users', usersRouter);
 
 // start
 app.listen(PORT, HOST_NAME || 'localhost', ()=> {
-    console.log(`Server running at ${HOST_NAME}:${PORT}`)
+    console.log(`ui-service running at ${HOST_NAME}:${PORT}`)
 })
