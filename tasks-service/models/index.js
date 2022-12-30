@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const user = require('./user');
+const task = require('./task');
 
 const sequelize = new Sequelize('postgres://admin:password@localhost:5455/postgres', {
   dialect: 'postgres',
@@ -13,6 +13,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.User = user(sequelize, Sequelize);
+db.Task = task(sequelize, Sequelize);
 
 module.exports = db;
