@@ -9,7 +9,7 @@ const HOST_NAME = process.env.HOST_NAME || 'localhost'
 
 
 // route setup
-app.use('/tasks', tasksRouter);
+app.use('/', tasksRouter);
 
 // db setup
 const db = require('./models');

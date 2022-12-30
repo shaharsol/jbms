@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // route setup
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 
 // db setup
 const db = require('./models');
