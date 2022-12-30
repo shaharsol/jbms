@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const user = require('./user');
+const user = require('./User');
 
 const sequelize = new Sequelize('postgres://admin:password@localhost:5455/postgres', {
   dialect: 'postgres',

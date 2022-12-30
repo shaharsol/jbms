@@ -7,6 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const HOST_NAME = process.env.HOST_NAME || 'localhost'
 
+// input setup
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // route setup
 app.use('/users', usersRouter);
