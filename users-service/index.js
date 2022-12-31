@@ -4,7 +4,7 @@ const usersRouter = require('./routes/users');
 const app = express();
 
 // config
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.APP_PORT || 3001;
 const HOST_NAME = process.env.HOST_NAME || 'localhost'
 
 // input setup
