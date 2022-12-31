@@ -22,5 +22,4 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.User = user(sequelize, Sequelize);
-
 module.exports = db;

@@ -1,11 +1,21 @@
-FROM node:16.15-alpine3.14
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
-RUN adduser -S app
-COPY ./ .
+FROM node:16
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+# copying packages first helps take advantage of docker layers
+COPY package*.json ./
+
 RUN npm install
-RUN chown -R app /opt/app
-USER app
+# If you are building your code for production
+RUN npm ci
+
+# Bundle app source
+COPY . .
+
 EXPOSE 3000
-EXPOSE 3001
-CMD [ "npm", "start" ]
+
+CMD [ "npm", "run", "start-docker" ]
