@@ -11,11 +11,11 @@ const signInPage = async (req, res) => {
 }
 const signIn = async (req, res) => {
     try {
-        const user = await axios.post('http://localhost:3001/sign-in',{
+        const user = await axios.post('http://localhost:3001/sign-in', {
             username: req.body.username,
             password: req.body.password,
         });
-        console.log(user)
+        console.log(user.data.id)
         res.redirect(`/tasks/user/${user.data.id}`)
 
     } catch (e) {
