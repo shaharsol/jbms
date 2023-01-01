@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const task = require('./task');
+const task = require('./Task');
 
 const DB_USERNAME = process.env.DB_USERNAME || 'admin';
 const DB_PASSWORD = process.env.DB_PASSWORD || 'password';

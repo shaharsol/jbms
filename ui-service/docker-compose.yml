@@ -4,9 +4,9 @@ services:
     build: .
     ports:
       - "3000:3000"
-    volumes:
-      - ./:/usr/src/app/
-      - /usr/src/app/node_modules
+    # volumes:
+    #   - ./:/usr/src/app/
+    #   - /usr/src/app/node_modules
     environment:
       - APP_PORT=3000
       - HOST_NAME=0.0.0.0
