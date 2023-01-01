@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
+const USERS_SERVICE_HOST = process.env.USERS_SERVICE_HOST || 'localhost';
+const USERS_SERVICE_PORT = process.env.USERS_SERVICE_PORT || '3001';
+
 const healthcheck = async (req, res) => {
     res.send('I\'m healthy');
 }
@@ -11,7 +14,7 @@ const signInPage = async (req, res) => {
 }
 const signIn = async (req, res) => {
     try {
-        const user = await axios.post('http://localhost:3001/sign-in', {
+        const user = await axios.post(`http://${USERS_SERVICE_HOST}:${USERS_SERVICE_PORT}/sign-in`, {
             username: req.body.username,
             password: req.body.password,
         });

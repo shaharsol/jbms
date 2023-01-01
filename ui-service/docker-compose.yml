@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  ui-service:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # Maps our current project directory `.` to
+      # our working directory in the container
+      - ./:/usr/src/app/
+      # node_modules workaround for volumes
+      # https://stackoverflow.com/a/32785014
+      - /usr/src/app/node_modules
+    environment:
+      - APP_PORT=3000
+      - HOST_NAME=0.0.0.0
+      - USERS_SERVICE_HOST=host.docker.internal
+      - USERS_SERVICE_PORT=3001
+      - TASKS_SERVICE_HOST=host.docker.internal
+      - TASKS_SERVICE_PORT=3002
