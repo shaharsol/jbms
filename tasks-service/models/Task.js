@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
       primaryKey: true,
     },
     userId: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
     },
     description: {

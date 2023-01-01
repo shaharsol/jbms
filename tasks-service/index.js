@@ -4,7 +4,7 @@ const tasksRouter = require('./routes/tasks');
 const app = express();
 
 // config
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.APP_PORT || 3002;
 const HOST_NAME = process.env.HOST_NAME || 'localhost'
 
 

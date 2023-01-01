@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start-docker": "npx sequelize-cli db:migrate --config migration-config.json && npx sequelize-cli db:seed:all --config migration-config.json && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
