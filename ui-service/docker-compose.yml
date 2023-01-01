@@ -5,11 +5,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      # Maps our current project directory `.` to
-      # our working directory in the container
       - ./:/usr/src/app/
-      # node_modules workaround for volumes
-      # https://stackoverflow.com/a/32785014
       - /usr/src/app/node_modules
     environment:
       - APP_PORT=3000
