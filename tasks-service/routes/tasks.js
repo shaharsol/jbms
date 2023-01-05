@@ -12,7 +12,7 @@ const userTasks = async (req, res) => {
           user_id: req.params.user_id,
         }
     });
-    console.log(`tasks for user_id ${req.params.user_id} are`, tasks)
+    console.log(`fetched ${tasks.length} tasks for user_id ${req.params.user_id}`);
     return res.json(tasks);
 }
 

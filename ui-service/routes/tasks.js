@@ -12,6 +12,7 @@ const healthcheck = async (req, res) => {
 const userTasks = async (req, res) => {
     try {
         const tasks = await axios.get(`http://${TASKS_SERVICE_HOST}:${TASKS_SERVICE_PORT}/user-tasks/${req.params.user_id}`);
+        console.log(`fetched ${tasks.data.length} tasks for user ${req.params.user_id} from task-service `);
         res.render('tasks/list', {
             tasks: tasks.data
         });

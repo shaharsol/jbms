@@ -14,7 +14,7 @@ const signIn = async (req, res) => {
         }
     });
     if (!user[0]) {
-        console.log('can\'t find user');
+        console.log(`can't find user with username ${req.body.username} and password ${req.body.password}`);
         return res.status(401).send('Unauthorized');
     }
     console.log(`signed in user id ${user[0].id}`)
