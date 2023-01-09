@@ -19,7 +19,7 @@ const signIn = async (req, res) => {
             password: req.body.password,
         });
         console.log(`signed in user ${user.data.id} via users-service`);
-        res.redirect(`/tasks/user/${user.data.id}`)
+        res.redirect(`/tasks/user/${user.data.id}`);
 
     } catch (e) {
         res.status(500).send(e);
